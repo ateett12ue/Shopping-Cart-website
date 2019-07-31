@@ -62,7 +62,12 @@ class UI {
 }
 
 //local storage
-class Storage {}
+class Storage {
+  //static method --  we can reuse them without intializing the class
+  static saveProducts(products) {
+    localStorage.setItem("products", JSON.stringify(products));
+  }
+}
 
 //event listner
 document.addEventListener("DOMContentLoaded", () => {
@@ -70,5 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const products = new Products();
 
   //get all products
-  products.getProducts().then(products => ui.displayProducts(products));
+  products.getProducts().then(products => {
+    ui.displayProducts(products);
+    Storage.saveProducts(products);
+  });
 });
