@@ -9,3 +9,21 @@ const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDom = document.querySelector(".products-center");
+
+//cart empty
+let cart = [];
+
+//getting the products
+class Products {}
+
+//display products
+class UI {}
+
+//local storage
+class Storage {}
+
+//event listner
+document.addEventListener("DOMContentLoaded", () => {
+  const ui = new UI();
+  const products = new Products();
+});
