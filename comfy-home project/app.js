@@ -139,6 +139,16 @@ class UI {
   cartLogic() {
     //Clear Cart Button
     clearCartBtn.addEventListener("click", () => this.clearCart());
+    //cart functionality
+    cartContent.addEventListener("click", event => {
+      //console.log(event.target);
+      if (event.target.classList.contains("remove-item")) {
+        let removeItem = event.target;
+        let id = removeItem.dataset.id;
+        cartContent.removeChild(removeItem.parentElement.parentElement);
+        this.removeItem(id); //remove from the cart
+      }
+    });
   }
   clearCart() {
     let cartItems = cart.map(item => item.id);
